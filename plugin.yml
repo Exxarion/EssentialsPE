@@ -1,7 +1,7 @@
 name: EssentialsPE
 main: EssentialsPE\Loader
-version: 1.1.0
-api: 1.9.0
+version: 1.1.0 Beta 8
+api: 1.12.0
 author: LegendsOfMCPE Team
 website: https://github.com/LegendOfMCPE/EssentialsPE
 
@@ -23,9 +23,9 @@ permissions:
                     essentials.afk.other:
                         default: op
                         description: "Change other's AFK status"
-                    #essentials.afk.auto:
-                    #    default: op
-                    #    description: "Players with this permission will be set to AFK after a period of inaction"
+                    essentials.afk.preventauto:
+                        default: op
+                        description: "Players with this permission will NOT be put into AFK after a period of inaction"
                     essentials.afk.kickexempt:
                         default: op
                         description: "Exempt the user from being auto kicked for AFK"
@@ -91,13 +91,6 @@ permissions:
             essentials.essentials:
                 default: op
                 description: "See the current Essentials version"
-                children:
-                    essentials.essentials.reload:
-                        default: op
-                        description: "Let you reload the config file of EssentialsPE"
-                    #essentials.essentials.update:
-                    #    default: op
-                    #    description: "Allow to update EssentialsPE to its latest version, if available"
             essentials.extinguish:
                 default: op
                 description: "Extinguish a player"
@@ -105,6 +98,16 @@ permissions:
                     essentials.extinguish.other:
                         default: op
                         description: "Extinguish other players"
+            essentials.fly:
+                default: op
+                description: "Fly in Survival or Adventure mode!"
+                children:
+                    essentials.fly.others:
+                        default: op
+                        description: "Make other players fly!"
+            essentials.gamemode:
+                deault: op
+                description: "Change your gamemode!"
             essentials.getpos:
                 default: op
                 description: "Get any player's position"
@@ -161,9 +164,19 @@ permissions:
             essentials.kill:
                 default: op
                 description: "Kill other players"
+            essentials.kit:
+                default: true
+                description: "Access to the /kit command"
+                children:
+                    essentials.kit.other:
+                        default: op
+                        description: "Give a kit to other players"
             essentials.more:
                 default: op
                 description: "Get a stack of the item you're holding"
+            essentials.msg:
+                default: true
+                description: "Send private messages to other players"
             essentials.mute:
                 default: op
                 description: "Mute a player from the chat"
@@ -231,6 +244,9 @@ permissions:
                     essentials.repair.armor:
                         default: op
                         description: "Let your repair the equiped armor while using /repair all"
+            essentials.reply:
+                default: true
+                description: "Allow the player to quick reply to the last player that messaged him"
             essentials.seen:
                 default: op
                 description: "Check player's last online time"
@@ -275,6 +291,9 @@ permissions:
                             essentials.sign.break.teleport:
                                 default: op
                                 description: "Allow to remove Teleport signs"
+                            essentials.sign.break.warp:
+                                default: op
+                                description: "Allow to remove Warp signs"
                     essentials.sign.color:
                         default: op
                         description: "Allow to create colored signs"
@@ -300,6 +319,9 @@ permissions:
                             essentials.sign.create.teleport:
                                 default: op
                                 description: "Allow to create Teleport signs"
+                            essentials.sign.create.warp:
+                                default: op
+                                description: "Allow to create Warp signs"
                     essentials.sign.use:
                         default: op
                         description: "Allow to use special signs"
@@ -322,9 +344,16 @@ permissions:
                             essentials.sign.use.teleport:
                                 default: op
                                 description: "Allow to use Teleport signs"
+                            essentials.sign.use.warp:
+                                default: op
+                                description: "Allow to use Warp signs"
             essentials.spawn:
                 default: true
                 description: "Teleport to server's main spawn"
+                children:
+                    essentials.spawn.other:
+                        default: op
+                        description: "Teleport others to the server's main spawn"
             essentials.sudo:
                 default: op
                 description: "Run a command as another player"
@@ -369,6 +398,13 @@ permissions:
                     essentials.unlimited.other:
                         default: op
                         description: "Allow to enable unlimited placing of blocks to other players"
+            essentials.update:
+                default: op
+                description: "Allow to update EssentialsPE to the latest available version, or to check if there is one available"
+                children:
+                    essentials.update.notify:
+                        default: op
+                        description: "Get notified when a new version of EssentialsPE if found"
             essentials.vanish:
                 default: op
                 description: "Hide yourself or another player"
@@ -382,9 +418,16 @@ permissions:
             essentials.warp:
                 default: true
                 description: "Teleport to a warp"
+                children:
+                    essentials.warp.other:
+                        default: op
+                        description: "Teleport other players to a warp"
             essentials.world:
                 default: op
                 description: "Teleport to another world"
             essentials.worth:
                 default: true
                 description: "Get the price of an item"
+            essentials.fly:
+                default: op
+                description: "Allows users to fly in survival"
